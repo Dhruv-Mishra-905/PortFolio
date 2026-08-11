@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
+from flask import Flask, abort, flash, redirect, render_template, request, send_from_directory, session, url_for
 
 from github_fetcher import fetch_project_github_data
 from journey_data import get_journey_steps
@@ -25,6 +25,11 @@ app = Flask(
     static_url_path='/src',
 )
 app.secret_key = os.environ.get('PORTFOLIO_SECRET_KEY', 'change-this-portfolio-admin-secret')
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(app.static_folder, 'favicon.svg', mimetype='image/svg+xml')
 
 
 def _content():
