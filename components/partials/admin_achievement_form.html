@@ -1,0 +1,9 @@
+<form action="/dhruv-control-panel/achievements/save" method="POST" class="admin-form">
+    <input type="hidden" name="current_slug" value="{{ achievement.slug or '' }}">
+    <div class="admin-grid">
+        <label>Badge / Number<input name="number" value="{{ achievement.number or '' }}" placeholder="e.g. R2 or 50+"></label>
+        <label>Title<input name="title" value="{{ achievement.title or '' }}" required></label>
+    </div>
+    <label>Description<textarea name="description">{{ achievement.description or '' }}</textarea></label>
+    <button class="btn btn-primary" type="submit">Save Achievement</button>
+</form>

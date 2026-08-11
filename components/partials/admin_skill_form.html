@@ -1,0 +1,16 @@
+<form action="/dhruv-control-panel/skills/save" method="POST" class="admin-form">
+    <input type="hidden" name="current_slug" value="{{ category.slug or '' }}">
+    <div class="admin-grid">
+        <label>Category Title<input name="title" value="{{ category.title or '' }}" required></label>
+        <label>Icon (emoji or text)<input name="icon" value="{{ category.icon or '🔧' }}"></label>
+        <label>Subtitle<input name="subtitle" value="{{ category.subtitle or '' }}"></label>
+        <label>Fallback Dot Emoji (for skills without icon URL)<input name="skill_dot" value="" placeholder="e.g. 🔗"></label>
+    </div>
+    <label>Description<textarea name="description">{{ category.description or '' }}</textarea></label>
+    <label>Skills List
+        <small style="display:block;opacity:0.65;margin-bottom:4px;">One skill per line. Format: <code>Name|icon_url</code> for icon, or just <code>Name</code> to use the Fallback Dot Emoji above.</small>
+        <textarea name="skills_list" rows="10" placeholder="HTML|https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg&#10;REST API&#10;Flask|https://...">{% for skill in (category.skills or []) %}{% if skill.icon %}{{ skill.name }}|{{ skill.icon }}{% else %}{{ skill.name }}{% endif %}
+{% endfor %}</textarea>
+    </label>
+    <button class="btn btn-primary" type="submit">Save Skill Category</button>
+</form>

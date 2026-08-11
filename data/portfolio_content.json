@@ -1,0 +1,592 @@
+{
+  "site": {
+    "name": "Dhruv Mishra",
+    "headline": "B.Tech CSE (AI & ML) Student | Web Developer | Python Developer",
+    "location": "Ranchi, India",
+    "about_1": "Software development student with hands-on experience in web development using React, Python, HTML, CSS, and JavaScript. I build and deploy full-stack applications integrating REST APIs and OpenCV-based computer vision features.",
+    "about_2": "With practical exposure to machine learning and artificial intelligence techniques, I enjoy turning complex problems into elegant, user-friendly applications - from healthcare platforms to real-time crypto trackers.",
+    "email": "dhruvmh50@gmail.com",
+    "phone": "+91 6204282905",
+    "languages": "Hindi, English",
+    "projects_count": "5+",
+    "problems_count": "50+",
+    "internships_count": "2",
+    "cv_label": "View CV",
+    "cv_url": "/src/uploads/cv.pdf",
+    "contact_intro": "I'm always open to discussing new projects, internship opportunities, or collaborations.",
+    "admin_secret_name": "Dhruv Admin",
+    "admin_secret_email": "dhruv@admin.local"
+  },
+  "projects": [
+    {
+      "slug": "everheal",
+      "title": "EverHeal",
+      "icon": "🏥",
+      "icon_class": "project-icon--health",
+      "role": "Frontend Developer & Team Leader",
+      "date": "Dec 2025 — Present",
+      "summary": "Healthcare consultation platform with improved UI/UX for patient-doctor interactions. Led the development team and represented EverHeal at the EDC College-Level Competition, advancing to Round 2.",
+      "tech": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "github_url": "https://github.com/Dhruv-Mishra-905/EverHeal",
+      "live_url": "https://everheal.netlify.app/",
+      "github_owner": "Dhruv-Mishra-905",
+      "github_repo": "EverHeal",
+      "readme_path": "",
+      "ref": "main",
+      "featured": true,
+      "image_url": "",
+      "description": "Healthcare consultation platform with improved UI/UX for patient-doctor interactions. Led the development team and represented EverHeal at the EDC College-Level Competition, advancing to Round 2.",
+      "skills_learned": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },
+    {
+      "slug": "crypto-tracker",
+      "title": "Crypto Tracker",
+      "icon": "📈",
+      "icon_class": "project-icon--crypto",
+      "role": "Full Stack Developer",
+      "date": "Nov 2025 — Dec 2025",
+      "summary": "React web application integrating REST APIs for real-time cryptocurrency prices, trends, and market data with an enhanced Bootstrap interface.",
+      "tech": [
+        "React",
+        "Bootstrap",
+        "REST API"
+      ],
+      "github_url": "https://github.com/Dhruv-Mishra-905/react-project-hub/tree/main/cryptoTracker",
+      "live_url": "https://simplecryptotracker.netlify.app/",
+      "github_owner": "Dhruv-Mishra-905",
+      "github_repo": "react-project-hub",
+      "readme_path": "cryptoTracker",
+      "ref": "main",
+      "featured": true,
+      "image_url": "",
+      "description": "React web application integrating REST APIs for real-time cryptocurrency prices, trends, and market data with an enhanced Bootstrap interface.",
+      "skills_learned": [
+        "React",
+        "Bootstrap",
+        "REST API"
+      ]
+    },
+    {
+      "slug": "color-detection",
+      "title": "Color Detection",
+      "icon": "🎨",
+      "icon_class": "project-icon--color",
+      "role": "Python Developer",
+      "date": "Sep 2025 — Oct 2025",
+      "summary": "Python application using OpenCV to detect and classify colors through pixel and color-range analysis with core computer vision techniques.",
+      "tech": [
+        "Python",
+        "OpenCV"
+      ],
+      "github_url": "https://github.com/Dhruv-Mishra-905/Python-Projects/tree/main/Learning/color-Detection",
+      "live_url": null,
+      "github_owner": "Dhruv-Mishra-905",
+      "github_repo": "Python-Projects",
+      "readme_path": "Learning/color-Detection",
+      "ref": "main",
+      "featured": true,
+      "image_url": "",
+      "description": "Python application using OpenCV to detect and classify colors through pixel and color-range analysis with core computer vision techniques.",
+      "skills_learned": [
+        "Python",
+        "OpenCV"
+      ]
+    },
+    {
+      "slug": "face-recognition",
+      "title": "Face Recognition System",
+      "icon": "👤",
+      "icon_class": "project-icon--face",
+      "role": "Frontend & Backend Contributor",
+      "date": "Aug 2025 — Sep 2025",
+      "summary": "Automated attendance system integrating frontend features with backend Python scripts for an OpenCV-based face recognition workflow. Advanced to Round 2 of Smart India Hackathon (SIH) 2025.",
+      "tech": [
+        "Python",
+        "OpenCV",
+        "HTML",
+        "CSS"
+      ],
+      "github_url": "https://github.com/Dhruv-Mishra-905/Python-Projects/tree/main/Learning/Face-Recognise",
+      "live_url": null,
+      "github_owner": "Dhruv-Mishra-905",
+      "github_repo": "Python-Projects",
+      "readme_path": "Learning/Face-Recognise",
+      "ref": "main",
+      "featured": true,
+      "image_url": "",
+      "description": "Automated attendance system integrating frontend features with backend Python scripts for an OpenCV-based face recognition workflow. Advanced to Round 2 of Smart India Hackathon (SIH) 2025.",
+      "skills_learned": [
+        "Python",
+        "OpenCV",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "slug": "svms",
+      "title": "Society Visitor Management System",
+      "icon": "🏢",
+      "icon_class": "project-icon--svms",
+      "role": "Software Development Intern",
+      "date": "Jun 2026 — Jul 2026",
+      "summary": "Full-stack visitor management system for Central Coalfields Limited with form handling, dashboards, and streamlined check-in workflows.",
+      "tech": [
+        "React",
+        "Node.js",
+        "MySQL"
+      ],
+      "github_url": "https://github.com/Dhruv-Mishra-905/Main-Projects/tree/main/SVMS/society-visitor-management-system",
+      "live_url": "https://society-visitor-management-system.onrender.com/",
+      "github_owner": "Dhruv-Mishra-905",
+      "github_repo": "Main-Projects",
+      "readme_path": "SVMS/society-visitor-management-system",
+      "ref": "main",
+      "featured": false,
+      "image_url": "",
+      "description": "Full-stack visitor management system for Central Coalfields Limited with form handling, dashboards, and streamlined check-in workflows.",
+      "skills_learned": [
+        "React",
+        "Node.js",
+        "MySQL"
+      ]
+    },
+    {
+      "slug": "snac",
+      "title": "Smart Network Analytics Center",
+      "icon": "📡",
+      "icon_class": "project-icon--snac",
+      "role": "Software Development Intern",
+      "date": "May 2026 — Jun 2026",
+      "summary": "Dashboard components for real-time network analytics and data visualization at Usha Martin's SNAC facility.",
+      "tech": [
+        "JavaScript",
+        "Data Viz",
+        "Analytics"
+      ],
+      "github_url": "https://github.com/Dhruv-Mishra-905/Main-Projects/tree/641abd0128d91461cc36044abcb8a4cb42b2fdb0/Smart%20Network%20Analytics%20Center%20(SNAC)/Smart%20Network%20Analytics%20Center%20(SNAC)",
+      "live_url": null,
+      "github_owner": "Dhruv-Mishra-905",
+      "github_repo": "Main-Projects",
+      "readme_path": "Smart Network Analytics Center (SNAC)/Smart Network Analytics Center (SNAC)",
+      "ref": "641abd0128d91461cc36044abcb8a4cb42b2fdb0",
+      "featured": false,
+      "image_url": "",
+      "description": "Dashboard components for real-time network analytics and data visualization at Usha Martin's SNAC facility.",
+      "skills_learned": [
+        "JavaScript",
+        "Data Viz",
+        "Analytics"
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "slug": "snac",
+      "title": "Software Development Intern",
+      "company": "Smart Network Analytics Center (SNAC), Usha Martin",
+      "location": "Ranchi, India",
+      "date": "May 2026 — Jun 2026",
+      "icon": "📡",
+      "summary": "Engineered dashboard components for real-time network analytics and data visualization at Usha Martin's SNAC facility.",
+      "tech": [
+        "JavaScript",
+        "Data Visualization",
+        "Analytics",
+        "Dashboards"
+      ],
+      "github_url": "https://github.com/Dhruv-Mishra-905/Main-Projects/tree/641abd0128d91461cc36044abcb8a4cb42b2fdb0/Smart%20Network%20Analytics%20Center%20(SNAC)/Smart%20Network%20Analytics%20Center%20(SNAC)",
+      "live_url": null,
+      "points": [
+        "Engineered dashboard components for real-time network analytics and data visualization, giving the team clearer insight into device performance and connectivity trends.",
+        "Analyzed device and traffic data alongside the technical team to strengthen monitoring workflows and surface usage patterns.",
+        "Collaborated on UI components that translate complex network metrics into actionable visual summaries for operators."
+      ],
+      "responsibilities": [
+        "Built and refined analytics dashboard widgets for live network monitoring.",
+        "Worked with device and traffic datasets to improve reporting accuracy.",
+        "Supported the team in translating technical requirements into frontend features."
+      ],
+      "record_file_url": "",
+      "report_file_url": "",
+      "report_image_url": "",
+      "certificate_image_url": ""
+    },
+    {
+      "slug": "svms",
+      "title": "Software Development Intern",
+      "company": "Society Visitor Management System (SVMS), Central Coalfields Limited",
+      "location": "Ranchi, India",
+      "date": "Jun 2026 — Jul 2026",
+      "icon": "🏢",
+      "summary": "Delivered frontend and backend components of a full-stack visitor management system for Central Coalfields Limited.",
+      "tech": [
+        "React",
+        "Node.js",
+        "MySQL",
+        "REST API"
+      ],
+      "github_url": "https://github.com/Dhruv-Mishra-905/Main-Projects/tree/main/SVMS/society-visitor-management-system",
+      "live_url": "https://society-visitor-management-system.onrender.com/",
+      "points": [
+        "Delivered frontend and backend components of a visitor management system, streamlining check-in and record-keeping workflows.",
+        "Implemented form handling and dashboard features that improved administrative efficiency and data accuracy.",
+        "Built check-in flows and admin dashboards used for day-to-day society visitor operations."
+      ],
+      "responsibilities": [
+        "Developed React frontend screens for visitor registration and admin dashboards.",
+        "Implemented backend APIs and database integration for visitor records.",
+        "Deployed and maintained the live application on Render."
+      ],
+      "record_file_url": "",
+      "report_file_url": "",
+      "report_image_url": "",
+      "certificate_image_url": ""
+    }
+  ],
+  "certificates": [
+    {
+      "slug": "sih-2025",
+      "title": "Smart India Hackathon 2025",
+      "issuer": "Internal Round - Round 2 Qualifier",
+      "description": "Advanced to Round 2 with Face Recognition System project.",
+      "skills": [
+        "Python",
+        "OpenCV",
+        "Teamwork"
+      ],
+      "image_url": "",
+      "link_url": "https://github.com/Dhruv-Mishra-905/Python-Projects/tree/main/Learning/Face-Recognise",
+      "link_label": "View Project"
+    },
+    {
+      "slug": "edc-college-competition",
+      "title": "EDC College Competition",
+      "issuer": "Entrepreneurship Development Cell",
+      "description": "Led EverHeal team to Round 2 in the college-level EDC competition.",
+      "skills": [
+        "Leadership",
+        "Frontend",
+        "Pitching"
+      ],
+      "image_url": "",
+      "link_url": "https://everheal.netlify.app/",
+      "link_label": "View Project"
+    },
+    {
+      "slug": "snac-internship",
+      "title": "SNAC Internship",
+      "issuer": "Smart Network Analytics Center, Usha Martin",
+      "description": "Software Development Intern - network analytics dashboard development.",
+      "skills": [
+        "JavaScript",
+        "Analytics",
+        "Dashboard"
+      ],
+      "image_url": "",
+      "link_url": "https://github.com/Dhruv-Mishra-905/Main-Projects/tree/641abd0128d91461cc36044abcb8a4cb42b2fdb0/Smart%20Network%20Analytics%20Center%20(SNAC)/Smart%20Network%20Analytics%20Center%20(SNAC)",
+      "link_label": "View Work"
+    },
+    {
+      "slug": "svms-internship",
+      "title": "SVMS Internship",
+      "issuer": "Central Coalfields Limited - Ranchi",
+      "description": "Software Development Intern - Society Visitor Management System.",
+      "skills": [
+        "React",
+        "Node.js",
+        "MySQL"
+      ],
+      "image_url": "",
+      "link_url": "https://society-visitor-management-system.onrender.com/",
+      "link_label": "View Live"
+    }
+  ],
+  "journey": [
+    {
+      "slug": "early-stage",
+      "icon": "🎓",
+      "title": "Early Stage",
+      "period": "Class 9 — Class 11",
+      "description": "Started my programming journey with basic fundamentals and exploring how code works.",
+      "tech": [
+        "Python",
+        "HTML",
+        "C/C++",
+        "Pydroid"
+      ],
+      "highlight": false
+    },
+    {
+      "slug": "beginner",
+      "icon": "📈",
+      "title": "Beginner Level",
+      "period": "Class 12 — B.Tech 1st Year",
+      "description": "Learned web development basics and strengthened core programming with structured practice.",
+      "tech": [
+        "HTML/CSS",
+        "C",
+        "Python",
+        "Java",
+        "VS Code"
+      ],
+      "highlight": false
+    },
+    {
+      "slug": "intermediate",
+      "icon": "🔧",
+      "title": "Intermediate Level",
+      "period": "1st Year — 2nd Year",
+      "description": "Built real projects, explored mobile & computer vision, and started competitive programming.",
+      "tech": [
+        "JavaScript",
+        "Bootstrap",
+        "Kotlin",
+        "OpenCV",
+        "Git/GitHub"
+      ],
+      "highlight": false
+    },
+    {
+      "slug": "advanced",
+      "icon": "🚀",
+      "title": "Advanced Level",
+      "period": "2nd Year —  3rd Year",
+      "description": "Focused on full-stack web apps, databases, and deploying scalable real-world solutions.",
+      "tech": [
+        "React/Vite",
+        "Node.js",
+        "MySQL",
+        "LeetCode",
+        "CodeChef"
+      ],
+      "highlight": false
+    },
+    {
+      "slug": "professional",
+      "icon": "⚡",
+      "title": "Professional Level",
+      "period": "3rd Year — Present",
+      "description": "Building production-ready full-stack apps with backend APIs, internships, and AI/ML integrations.",
+      "tech": [
+        "ExpressJS",
+        "Flask",
+        "REST API",
+        "SQLite",
+        "AI & ML"
+      ],
+      "highlight": true
+    }
+  ],
+  "skills": [
+    {
+      "slug": "web-technologies",
+      "title": "Web Technologies",
+      "icon": "🌐",
+      "subtitle": "Frontend & backend web development stack",
+      "description": "Technologies I use to build responsive, interactive web applications — from static pages to full-stack apps with REST APIs.",
+      "skills": [
+        {
+          "name": "HTML",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "CSS",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "JavaScript",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "React JS",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "Vite",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "Node JS",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "ExpressJS",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "Flask",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "REST API",
+          "icon": "",
+          "dot": "🔗"
+        }
+      ]
+    },
+    {
+      "slug": "programming-languages",
+      "title": "Programming Languages",
+      "icon": "</>",
+      "subtitle": "Core languages for software development",
+      "description": "Languages I've learned and used across web development, mobile apps, competitive programming, and computer vision projects.",
+      "skills": [
+        {
+          "name": "Python",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "Java",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "C",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "Kotlin",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "JavaScript",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+          "dot": ""
+        }
+      ]
+    },
+    {
+      "slug": "tools-ides",
+      "title": "Tools & IDEs",
+      "icon": "🔧",
+      "subtitle": "Development environment & productivity tools",
+      "description": "Editors, IDEs, and tools I rely on daily for coding, testing APIs, version control, and building applications.",
+      "skills": [
+        {
+          "name": "VS Code",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "Jupyter Notebook",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "Dev C++",
+          "icon": "",
+          "dot": ""
+        },
+        {
+          "name": "Android Studio",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "Postman",
+          "icon": "",
+          "dot": ""
+        },
+        {
+          "name": "Git/GitHub",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "Cursor",
+          "icon": "",
+          "dot": ""
+        },
+        {
+          "name": "LeetCode",
+          "icon": "",
+          "dot": ""
+        },
+        {
+          "name": "CodeChef",
+          "icon": "",
+          "dot": ""
+        },
+        {
+          "name": "Apache Server",
+          "icon": "",
+          "dot": ""
+        }
+      ]
+    },
+    {
+      "slug": "databases-others",
+      "title": "Databases & Others",
+      "icon": "🗄️",
+      "subtitle": "Data storage, vision & competitive platforms",
+      "description": "Database systems, computer vision libraries, and platforms where I practice algorithms and sharpen problem-solving skills.",
+      "skills": [
+        {
+          "name": "MySQL",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "SQLite",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
+          "dot": ""
+        },
+        {
+          "name": "OpenCV",
+          "icon": "",
+          "dot": ""
+        }
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "slug": "sih-r2",
+      "number": "R2",
+      "title": "Smart India Hackathon 2025",
+      "description": "Advanced to Round 2 with Face Recognition System"
+    },
+    {
+      "slug": "edc-r2",
+      "number": "R2",
+      "title": "EDC College Competition",
+      "description": "Led EverHeal team to Round 2"
+    },
+    {
+      "slug": "coding-problems",
+      "number": "50+",
+      "title": "Coding Problems Solved",
+      "description": "Across LeetCode and CodeChef platforms"
+    },
+    {
+      "slug": "real-projects",
+      "number": "5+",
+      "title": "Real-World Projects",
+      "description": "Built and deployed web & Python applications"
+    }
+  ]
+}

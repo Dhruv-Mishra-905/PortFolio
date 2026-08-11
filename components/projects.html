@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="All projects by Dhruv Mishra — web apps, Python tools, and computer vision projects.">
+    <title>All Projects | Dhruv Mishra</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow--1"></div>
+    <div class="bg-glow bg-glow--2"></div>
+
+    {% include 'partials/nav.html' %}
+
+    <section class="page-hero">
+        <div class="container">
+            <a href="/#projects" class="back-link">← Back to Home</a>
+            <p class="section-label">All Projects</p>
+            <h1>Everything I've <span class="gradient-text gradient-text--animated">Built</span></h1>
+            <p>Web applications, Python tools, computer vision projects, and internship work.</p>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <div class="projects-grid">
+                {% for project in projects %}
+                {% include 'partials/project_card.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <a href="/">Dhruv Mishra</a> with <span class="heart">♥</span> — © 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>

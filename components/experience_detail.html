@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ experience.title }} at {{ experience.company }}">
+    <title>{{ experience.company }} | Dhruv Mishra</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow--1"></div>
+    <div class="bg-glow bg-glow--2"></div>
+
+    {% include 'partials/nav.html' %}
+
+    <section class="page-hero">
+        <div class="container">
+            <a href="/#experience" class="back-link">← Back to Experience</a>
+            <div class="detail-hero">
+                <div class="detail-hero-icon">{{ experience.icon }}</div>
+                <div>
+                    <p class="section-label">Internship</p>
+                    <h1>{{ experience.title }}</h1>
+                    <p class="detail-meta">{{ experience.company }} · {{ experience.location }}</p>
+                    <p class="detail-meta">{{ experience.date }}</p>
+                </div>
+            </div>
+            <div class="detail-actions">
+                {% if experience.github_url %}
+                <a href="{{ experience.github_url }}" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub ↗</a>
+                {% endif %}
+                {% if experience.live_url %}
+                <a href="{{ experience.live_url }}" target="_blank" rel="noopener" class="btn btn-primary">Live Demo ↗</a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container detail-layout">
+            <div class="detail-main">
+                <div class="detail-section">
+                    <h2>Overview</h2>
+                    <p class="detail-lead">{{ experience.summary }}</p>
+                </div>
+
+                <div class="detail-section">
+                    <h2>Key Contributions</h2>
+                    <ul class="exp-points detail-points">
+                        {% for point in experience.points %}
+                        <li>{{ point }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <h2>Responsibilities</h2>
+                    <ul class="exp-points detail-points">
+                        {% for item in experience.responsibilities %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                {% if experience.report_image_url or experience.certificate_image_url %}
+                <div class="detail-section">
+                    <h2>Internship Images</h2>
+                    <div class="detail-gallery">
+                        {% if experience.report_image_url %}
+                        <figure>
+                            <img src="{{ experience.report_image_url }}" alt="{{ experience.company }} report certificate">
+                        </figure>
+                        {% endif %}
+                        {% if experience.certificate_image_url %}
+                        <figure>
+                            <img src="{{ experience.certificate_image_url }}" alt="{{ experience.company }} certificate">
+                        </figure>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <aside class="detail-sidebar">
+                <div class="detail-sidebar-card">
+                    <h3>Technologies Used</h3>
+                    <div class="project-tech">
+                        {% for tech in experience.tech %}
+                        <span>{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="detail-sidebar-card">
+                    <h3>Details</h3>
+                    <ul class="detail-info-list">
+                        <li><strong>Company</strong> {{ experience.company }}</li>
+                        <li><strong>Location</strong> {{ experience.location }}</li>
+                        <li><strong>Duration</strong> {{ experience.date }}</li>
+                    </ul>
+                </div>
+
+                {% if experience.record_file_url or experience.report_file_url or experience.report_image_url or experience.certificate_image_url %}
+                <div class="detail-sidebar-card">
+                    <h3>Records & Certificates</h3>
+                    <div class="detail-file-list">
+                        {% if experience.record_file_url %}
+                        <a href="{{ experience.record_file_url }}" target="_blank" rel="noopener">Open Record File ↗</a>
+                        {% endif %}
+                        {% if experience.report_file_url %}
+                        <a href="{{ experience.report_file_url }}" target="_blank" rel="noopener">Open Report File ↗</a>
+                        {% endif %}
+                        {% if experience.report_image_url %}
+                        <a href="{{ experience.report_image_url }}" target="_blank" rel="noopener">View Report Certificate ↗</a>
+                        {% endif %}
+                        {% if experience.certificate_image_url %}
+                        <a href="{{ experience.certificate_image_url }}" target="_blank" rel="noopener">View Certificate ↗</a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </aside>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <a href="/">Dhruv Mishra</a> with <span class="heart">♥</span> — © 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>

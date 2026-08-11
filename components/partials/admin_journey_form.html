@@ -1,0 +1,15 @@
+<form action="/dhruv-control-panel/journey/save" method="POST" class="admin-form">
+    <input type="hidden" name="current_slug" value="{{ step.slug or '' }}">
+    <div class="admin-grid">
+        <label>Stage Title<input name="title" value="{{ step.title or '' }}" required></label>
+        <label>Icon (emoji)<input name="icon" value="{{ step.icon or '🎓' }}"></label>
+        <label>Period<input name="period" value="{{ step.period or '' }}" placeholder="e.g. Class 9 — Class 11"></label>
+        <label>Tech Tags (comma-separated)<input name="tech" value="{{ (step.tech or []) | join(', ') }}" placeholder="Python, HTML, C/C++"></label>
+        <label class="admin-checkbox-label">
+            <input type="checkbox" name="highlight" {% if step.highlight %}checked{% endif %}>
+            Highlight this step (shows glowing card)
+        </label>
+    </div>
+    <label>Description<textarea name="description">{{ step.description or '' }}</textarea></label>
+    <button class="btn btn-primary" type="submit">Save Journey Step</button>
+</form>

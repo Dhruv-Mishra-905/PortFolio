@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Admin</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow--1"></div>
+    <div class="bg-glow bg-glow--2"></div>
+
+    <main class="admin-page">
+        <div class="container">
+            <div class="admin-header">
+                <div>
+                    <p class="section-label">Hidden Admin</p>
+                    <h1>Portfolio Control Panel</h1>
+                </div>
+                <form action="/dhruv-control-panel/logout" method="POST">
+                    <button class="btn btn-outline btn-sm" type="submit">Logout</button>
+                </form>
+            </div>
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="admin-alert">{{ messages[-1] }}</div>
+            {% endif %}
+            {% endwith %}
+
+            <section class="admin-panel">
+                <h2>Main Page Details</h2>
+                <form action="/dhruv-control-panel/site" method="POST" enctype="multipart/form-data" class="admin-form">
+                    <div class="admin-grid">
+                        <label>Name<input name="name" value="{{ content.site.name }}"></label>
+                        <label>Headline<input name="headline" value="{{ content.site.headline }}"></label>
+                        <label>Location<input name="location" value="{{ content.site.location }}"></label>
+                        <label>Email<input name="email" value="{{ content.site.email }}"></label>
+                        <label>Phone<input name="phone" value="{{ content.site.phone }}"></label>
+                        <label>Languages<input name="languages" value="{{ content.site.languages }}"></label>
+                        <label>Project Count<input name="projects_count" value="{{ content.site.projects_count }}"></label>
+                        <label>Problems Count<input name="problems_count" value="{{ content.site.problems_count }}"></label>
+                        <label>Internships Count<input name="internships_count" value="{{ content.site.internships_count }}"></label>
+                        <label>CV Button Text<input name="cv_label" value="{{ content.site.cv_label }}"></label>
+                        <label>CV Link<input name="cv_url" value="{{ content.site.cv_url }}" placeholder="/src/uploads/resume.pdf or Google Drive link"></label>
+                        <label>Upload CV<input type="file" name="cv_file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"></label>
+                        <label>Hidden Admin Name<input name="admin_secret_name" value="{{ content.site.admin_secret_name }}"></label>
+                        <label>Hidden Admin Email<input name="admin_secret_email" value="{{ content.site.admin_secret_email }}"></label>
+                    </div>
+                    {% if content.site.cv_url %}
+                    <p class="admin-current-image">Current CV: {{ content.site.cv_url }}</p>
+                    {% endif %}
+                    <label>About Paragraph 1<textarea name="about_1">{{ content.site.about_1 }}</textarea></label>
+                    <label>About Paragraph 2<textarea name="about_2">{{ content.site.about_2 }}</textarea></label>
+                    <label>Contact Intro<textarea name="contact_intro">{{ content.site.contact_intro }}</textarea></label>
+                    <button class="btn btn-primary" type="submit">Save Main Details</button>
+                </form>
+            </section>
+
+            <!-- ── JOURNEY ─────────────────────────────────────────── -->
+            <section class="admin-panel">
+                <h2>Add Journey Step</h2>
+                {% set step = {} %}
+                {% include 'partials/admin_journey_form.html' %}
+            </section>
+
+            <section class="admin-panel">
+                <h2>Edit Journey Steps</h2>
+                <div class="admin-list">
+                    {% for step in content.journey %}
+                    <details class="admin-edit-card">
+                        <summary>{{ step.icon }} {{ step.title }} <small style="opacity:0.55">— {{ step.period }}</small></summary>
+                        {% include 'partials/admin_journey_form.html' %}
+                        <form action="/dhruv-control-panel/journey/{{ step.slug }}/delete" method="POST">
+                            <button class="btn btn-outline btn-sm danger-button" type="submit">Remove Step</button>
+                        </form>
+                    </details>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- ── SKILLS ──────────────────────────────────────────── -->
+            <section class="admin-panel">
+                <h2>Add Skill Category</h2>
+                {% set category = {} %}
+                {% include 'partials/admin_skill_form.html' %}
+            </section>
+
+            <section class="admin-panel">
+                <h2>Edit Skill Categories</h2>
+                <div class="admin-list">
+                    {% for category in content.skills %}
+                    <details class="admin-edit-card">
+                        <summary>{{ category.icon }} {{ category.title }}</summary>
+                        {% include 'partials/admin_skill_form.html' %}
+                        <form action="/dhruv-control-panel/skills/{{ category.slug }}/delete" method="POST">
+                            <button class="btn btn-outline btn-sm danger-button" type="submit">Remove Category</button>
+                        </form>
+                    </details>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- ── ACHIEVEMENTS ────────────────────────────────────── -->
+            <section class="admin-panel">
+                <h2>Add Achievement</h2>
+                {% set achievement = {} %}
+                {% include 'partials/admin_achievement_form.html' %}
+            </section>
+
+            <section class="admin-panel">
+                <h2>Edit Achievements</h2>
+                <div class="admin-list">
+                    {% for achievement in content.achievements %}
+                    <details class="admin-edit-card">
+                        <summary>{{ achievement.number }} — {{ achievement.title }}</summary>
+                        {% include 'partials/admin_achievement_form.html' %}
+                        <form action="/dhruv-control-panel/achievements/{{ achievement.slug }}/delete" method="POST">
+                            <button class="btn btn-outline btn-sm danger-button" type="submit">Remove Achievement</button>
+                        </form>
+                    </details>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- ── PROJECTS ────────────────────────────────────────── -->
+            <section class="admin-panel">
+                <h2>Add Project</h2>
+                {% set project = {} %}
+                {% include 'partials/admin_project_form.html' %}
+            </section>
+
+            <section class="admin-panel">
+                <h2>Edit Projects</h2>
+                <div class="admin-list">
+                    {% for project in content.projects %}
+                    <details class="admin-edit-card">
+                        <summary>{{ project.title }}</summary>
+                        {% include 'partials/admin_project_form.html' %}
+                        <form action="/dhruv-control-panel/projects/{{ project.slug }}/delete" method="POST">
+                            <button class="btn btn-outline btn-sm danger-button" type="submit">Remove Project</button>
+                        </form>
+                    </details>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- ── INTERNSHIPS ─────────────────────────────────────── -->
+            <section class="admin-panel">
+                <h2>Add Internship</h2>
+                {% set experience = {} %}
+                {% include 'partials/admin_experience_form.html' %}
+            </section>
+
+            <section class="admin-panel">
+                <h2>Edit Internships</h2>
+                <div class="admin-list">
+                    {% for experience in content.experiences %}
+                    <details class="admin-edit-card">
+                        <summary>{{ experience.company }}</summary>
+                        {% include 'partials/admin_experience_form.html' %}
+                        <form action="/dhruv-control-panel/experiences/{{ experience.slug }}/delete" method="POST">
+                            <button class="btn btn-outline btn-sm danger-button" type="submit">Remove Internship</button>
+                        </form>
+                    </details>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- ── CERTIFICATES ────────────────────────────────────── -->
+            <section class="admin-panel">
+                <h2>Add Certificate</h2>
+                {% set certificate = {} %}
+                {% include 'partials/admin_certificate_form.html' %}
+            </section>
+
+            <section class="admin-panel">
+                <h2>Edit Certificates</h2>
+                <div class="admin-list">
+                    {% for certificate in content.certificates %}
+                    <details class="admin-edit-card">
+                        <summary>{{ certificate.title }}</summary>
+                        {% include 'partials/admin_certificate_form.html' %}
+                        <form action="/dhruv-control-panel/certificates/{{ certificate.slug }}/delete" method="POST">
+                            <button class="btn btn-outline btn-sm danger-button" type="submit">Remove Certificate</button>
+                        </form>
+                    </details>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ project.title }} — {{ project.summary }}">
+    <title>{{ project.title }} | Dhruv Mishra</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow--1"></div>
+    <div class="bg-glow bg-glow--2"></div>
+
+    {% include 'partials/nav.html' %}
+
+    <section class="page-hero{% if project.bg_media_url %} page-hero--media-bg{% endif %}">
+        {% if project.bg_media_url %}
+        <div class="detail-bg-media">
+            {% set bg_media = project.bg_media_url | lower %}
+            {% if bg_media.endswith('.mp4') or bg_media.endswith('.webm') or bg_media.endswith('.mov') or bg_media.endswith('.m4v') %}
+            <video src="{{ project.bg_media_url }}" autoplay muted loop playsinline></video>
+            {% else %}
+            <img src="{{ project.bg_media_url }}" alt="">
+            {% endif %}
+        </div>
+        {% endif %}
+        <div class="container">
+            <a href="/projects" class="back-link">← Back to Projects</a>
+            <div class="detail-hero">
+                <div class="detail-hero-icon {{ project.icon_class }}">{{ project.icon }}</div>
+                <div>
+                    <p class="section-label">Project</p>
+                    <h1>{{ project.title }}</h1>
+                    <p class="detail-meta">{{ project.role }} · {{ project.date }}</p>
+                </div>
+            </div>
+            <div class="detail-actions">
+                {% if project.github_url %}
+                <a href="{{ project.github_url }}" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub ↗</a>
+                {% endif %}
+                {% if project.live_url %}
+                <a href="{{ project.live_url }}" target="_blank" rel="noopener" class="btn btn-primary">Live Demo ↗</a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container detail-layout">
+            <div class="detail-main">
+                {% if project.image_url or github.hero_image %}
+                <div class="detail-hero-image">
+                    <img src="{{ project.image_url or github.hero_image }}" alt="{{ project.title }} preview">
+                </div>
+                {% endif %}
+
+                <div class="detail-section">
+                    <h2>Overview</h2>
+                    <p class="detail-lead">{{ project.description or github.description or project.summary }}</p>
+                </div>
+
+                {% if github.readme_html %}
+                <div class="detail-section">
+                    <h2>From the Repository</h2>
+                    <div class="readme-content">
+                        {{ github.readme_html | safe }}
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if github.gallery %}
+                <div class="detail-section">
+                    <h2>Gallery</h2>
+                    <div class="detail-gallery">
+                        {% for image in github.gallery %}
+                        <figure>
+                            <img src="{{ image.url }}" alt="{{ image.alt or project.title }}">
+                        </figure>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <aside class="detail-sidebar">
+                <div class="detail-sidebar-card">
+                    <h3>Technologies</h3>
+                    <div class="project-tech">
+                        {% for tech in project.tech %}
+                        <span>{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                {% if project.skills_learned %}
+                <div class="detail-sidebar-card">
+                    <h3>Skills Learned</h3>
+                    <div class="project-tech">
+                        {% for skill in project.skills_learned %}
+                        <span>{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if github.repo_info %}
+                <div class="detail-sidebar-card">
+                    <h3>Repository Info</h3>
+                    <ul class="detail-info-list">
+                        {% if github.repo_info.language %}
+                        <li><strong>Language</strong> {{ github.repo_info.language }}</li>
+                        {% endif %}
+                        {% if github.repo_info.stars %}
+                        <li><strong>Stars</strong> {{ github.repo_info.stars }}</li>
+                        {% endif %}
+                        {% if github.repo_info.topics %}
+                        <li><strong>Topics</strong> {{ github.repo_info.topics | join(', ') }}</li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {% endif %}
+            </aside>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <a href="/">Dhruv Mishra</a> with <span class="heart">♥</span> — © 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
