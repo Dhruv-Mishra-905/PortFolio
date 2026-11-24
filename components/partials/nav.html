@@ -17,3 +17,14 @@
         </ul>
     </div>
 </nav>
+
+<!-- Keep-alive: ping server every 3 min so Render never spins down -->
+<script>
+  (function () {
+    function ping() {
+      fetch('/ping').catch(function () {});
+    }
+    // First ping after 3 minutes, then repeat every 3 minutes
+    setInterval(ping, 3 * 60 * 1000);
+  })();
+</script>

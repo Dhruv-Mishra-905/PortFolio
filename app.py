@@ -58,6 +58,11 @@ def _admin_required():
     return None
 
 
+@app.route('/ping')
+def ping():
+    return 'pong', 200
+
+
 @app.route('/')
 def home():
     content = _content()
