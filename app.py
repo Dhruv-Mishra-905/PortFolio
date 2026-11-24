@@ -1,4 +1,7 @@
 import os
+import threading
+import time
+import urllib.request
 
 from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
 
@@ -315,3 +318,22 @@ def admin_logout():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+# ── Self-ping to prevent Render free-tier spin-down ─────────────────────────
+def _self_ping():
+    """Background thread: hits /ping on this server every 4 minutes forever.
+    Works even when no visitor has the site open."""
+    # Wait 30s after boot so the server is fully ready before first ping
+    time.sleep(30)
+    own_url = os.environ.get('RENDER_EXTERNAL_URL', 'http://localhost:5000') + '/ping'
+    while True:
+        try:
+            urllib.request.urlopen(own_url, timeout=10)
+        except Exception:
+            pass  # Silently ignore — it'll retry in 4 minutes
+        time.sleep(4 * 60)  # 4 minutes
+
+
+_ping_thread = threading.Thread(target=_self_ping, daemon=True)
+_ping_thread.start()

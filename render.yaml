@@ -17,3 +17,8 @@ services:
         sync: false
       - key: PYTHON_VERSION
         value: 3.10.0
+      - key: RENDER_EXTERNAL_URL
+        fromService:
+          type: web
+          name: dhruv-portfolio
+          property: host
