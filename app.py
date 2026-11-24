@@ -31,6 +31,19 @@ app.secret_key = os.environ.get('PORTFOLIO_SECRET_KEY', 'change-this-portfolio-a
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB max upload
 
 
+@app.errorhandler(500)
+def internal_error(e):
+    return (
+        "<h2 style='font-family:sans-serif;padding:40px'>⚠️ Server Error</h2>"
+        "<p style='font-family:sans-serif;padding:0 40px'>"
+        "The app could not connect to the database. "
+        "Make sure <b>SUPABASE_URL</b> and <b>SUPABASE_SERVICE_KEY</b> "
+        "are set in your Render environment variables.</p>"
+        f"<pre style='padding:0 40px;color:red'>{e}</pre>",
+        500,
+    )
+
+
 def _content():
     return load_content()
 

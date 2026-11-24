@@ -16,10 +16,17 @@ _supabase: Client | None = None
 
 
 def _sb() -> Client:
-    """Lazy-init Supabase client."""
+    """Lazy-init Supabase client. Raises clear error if env vars missing."""
     global _supabase
     if _supabase is None:
-        _supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+        url = os.environ.get("SUPABASE_URL", "")
+        key = os.environ.get("SUPABASE_SERVICE_KEY", "")
+        if not url or not key:
+            raise RuntimeError(
+                "SUPABASE_URL and SUPABASE_SERVICE_KEY env vars are not set. "
+                "Add them in your Render dashboard under Environment Variables."
+            )
+        _supabase = create_client(url, key)
     return _supabase
 
 
@@ -38,13 +45,15 @@ DEFAULT_SITE = {
     "location": "Ranchi, India",
     "about_1": (
         "Software development student with hands-on experience in web development "
-        "using React, Python, HTML, CSS, and JavaScript. I build and deploy full-stack "
-        "applications integrating REST APIs and OpenCV-based computer vision features."
+        "using React, Python, HTML, CSS, and JavaScript. Built and deployed full-stack "
+        "applications integrating REST APIs and OpenCV-based computer vision features, "
+        "with practical exposure to machine learning and artificial intelligence techniques."
     ),
     "about_2": (
-        "With practical exposure to machine learning and artificial intelligence "
-        "techniques, I enjoy turning complex problems into elegant, user-friendly "
-        "applications - from healthcare platforms to real-time crypto trackers."
+        "Currently pursuing B.Tech in Computer Science Engineering (AI & ML) at "
+        "Aditya College of Engineering & Technology (JNTUK). I enjoy turning complex "
+        "problems into elegant, user-friendly applications — from healthcare platforms "
+        "to real-time crypto trackers."
     ),
     "email": "dhruvmh50@gmail.com",
     "phone": "+91 6204282905",
@@ -82,8 +91,8 @@ def _load_site() -> dict:
             merged = deepcopy(DEFAULT_SITE)
             merged.update({k: v for k, v in row.items() if v is not None and v != ""})
             return merged
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"[portfolio_store] Supabase error loading site: {e}")
     return deepcopy(DEFAULT_SITE)
 
 
@@ -91,7 +100,8 @@ def _load_projects() -> list[dict]:
     try:
         resp = _sb().table("projects").select("*").order("sort_order").execute()
         return [_row_to_dict(r) for r in resp.data] if resp.data else []
-    except Exception:
+    except Exception as e:
+        print(f"[portfolio_store] Supabase error loading projects: {e}")
         return []
 
 
@@ -99,7 +109,8 @@ def _load_experiences() -> list[dict]:
     try:
         resp = _sb().table("experiences").select("*").order("sort_order").execute()
         return [_row_to_dict(r) for r in resp.data] if resp.data else []
-    except Exception:
+    except Exception as e:
+        print(f"[portfolio_store] Supabase error loading experiences: {e}")
         return []
 
 
@@ -107,7 +118,8 @@ def _load_certificates() -> list[dict]:
     try:
         resp = _sb().table("certificates").select("*").order("sort_order").execute()
         return [_row_to_dict(r) for r in resp.data] if resp.data else []
-    except Exception:
+    except Exception as e:
+        print(f"[portfolio_store] Supabase error loading certificates: {e}")
         return []
 
 
