@@ -1,0 +1,33 @@
+<form action="/dhruv-control-panel/experiences/save" method="POST" enctype="multipart/form-data" class="admin-form">
+    <input type="hidden" name="current_slug" value="{{ experience.slug or '' }}">
+    <div class="admin-grid">
+        <label>Internship Title<input name="title" value="{{ experience.title or '' }}" required></label>
+        <label>Company<input name="company" value="{{ experience.company or '' }}" required></label>
+        <label>Location<input name="location" value="{{ experience.location or '' }}"></label>
+        <label>Date<input name="date" value="{{ experience.date or '' }}"></label>
+        <label>Icon / Dummy Text<input name="icon" value="{{ experience.icon or 'IN' }}"></label>
+        <label>Tech Stack<input name="tech" value="{{ (experience.tech or []) | join(', ') }}" placeholder="React, Flask, MySQL"></label>
+        <label>GitHub URL<input name="github_url" value="{{ experience.github_url or '' }}"></label>
+        <label>Live URL<input name="live_url" value="{{ experience.live_url or '' }}"></label>
+        <label>Record File PDF/DOC<input type="file" name="record_file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"></label>
+        <label>Report File PDF/DOC<input type="file" name="report_file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"></label>
+        <label>Report Certificate Image<input type="file" name="report_image" accept="image/*"></label>
+        <label>Certificate Image<input type="file" name="certificate_image" accept="image/*"></label>
+    </div>
+    {% if experience.record_file_url %}
+    <p class="admin-current-image">Current record file: {{ experience.record_file_url }}</p>
+    {% endif %}
+    {% if experience.report_file_url %}
+    <p class="admin-current-image">Current report file: {{ experience.report_file_url }}</p>
+    {% endif %}
+    {% if experience.report_image_url %}
+    <p class="admin-current-image">Current report certificate image: {{ experience.report_image_url }}</p>
+    {% endif %}
+    {% if experience.certificate_image_url %}
+    <p class="admin-current-image">Current certificate image: {{ experience.certificate_image_url }}</p>
+    {% endif %}
+    <label>Summary<textarea name="summary">{{ experience.summary or '' }}</textarea></label>
+    <label>Key Contributions<textarea name="points" placeholder="One point per line">{{ (experience.points or []) | join('\n') }}</textarea></label>
+    <label>Responsibilities<textarea name="responsibilities" placeholder="One responsibility per line">{{ (experience.responsibilities or []) | join('\n') }}</textarea></label>
+    <button class="btn btn-primary" type="submit">Save Internship</button>
+</form>

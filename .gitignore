@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.portfolio-packages/
+src/uploads/
+data/portfolio_content.json
+.vscode/
+*.env

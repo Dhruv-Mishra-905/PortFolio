@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ category.title }} — skills by Dhruv Mishra">
+    <title>{{ category.title }} | Dhruv Mishra</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow--1"></div>
+    <div class="bg-glow bg-glow--2"></div>
+
+    {% include 'partials/nav.html' %}
+
+    <section class="page-hero">
+        <div class="container">
+            <a href="/#skills" class="back-link">← Back to Skills</a>
+            <div class="detail-hero">
+                <div class="detail-hero-icon">{{ category.icon }}</div>
+                <div>
+                    <p class="section-label">Skills</p>
+                    <h1>{{ category.title }}</h1>
+                    <p class="detail-meta">{{ category.subtitle }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <div class="detail-section detail-section--full">
+                <h2>About This Stack</h2>
+                <p class="detail-lead">{{ category.description }}</p>
+            </div>
+
+            <div class="skill-detail-grid">
+                {% for item in category.skills %}
+                <div class="skill-detail-item">
+                    {% if item.icon %}
+                    <img src="{{ item.icon }}" alt="{{ item.name }}">
+                    {% else %}
+                    <span class="tech-dot">{{ item.dot }}</span>
+                    {% endif %}
+                    <span>{{ item.name }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <a href="/">Dhruv Mishra</a> with <span class="heart">♥</span> — © 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>

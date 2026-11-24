@@ -1,0 +1,16 @@
+<form action="/dhruv-control-panel/certificates/save" method="POST" enctype="multipart/form-data" class="admin-form">
+    <input type="hidden" name="current_slug" value="{{ certificate.slug or '' }}">
+    <div class="admin-grid">
+        <label>Certificate Title<input name="title" value="{{ certificate.title or '' }}" required></label>
+        <label>Issuer<input name="issuer" value="{{ certificate.issuer or '' }}"></label>
+        <label>Skills Learned<input name="skills" value="{{ (certificate.skills or []) | join(', ') }}" placeholder="Python, Leadership"></label>
+        <label>Link URL<input name="link_url" value="{{ certificate.link_url or '' }}"></label>
+        <label>Link Label<input name="link_label" value="{{ certificate.link_label or 'View Certificate' }}"></label>
+        <label>Certificate Image<input type="file" name="image" accept="image/*"></label>
+    </div>
+    {% if certificate.image_url %}
+    <p class="admin-current-image">Current image: {{ certificate.image_url }}</p>
+    {% endif %}
+    <label>Description<textarea name="description">{{ certificate.description or '' }}</textarea></label>
+    <button class="btn btn-primary" type="submit">Save Certificate</button>
+</form>

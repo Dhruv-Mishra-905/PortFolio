@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: dhruv-portfolio
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: SUPABASE_URL
+        sync: false          # you'll set this in Render dashboard
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: PORTFOLIO_SECRET_KEY
+        generateValue: true  # auto-generates a random secret
+      - key: PORTFOLIO_ADMIN_NAME
+        sync: false
+      - key: PORTFOLIO_ADMIN_EMAIL
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.10.0

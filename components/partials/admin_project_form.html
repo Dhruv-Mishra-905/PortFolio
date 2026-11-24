@@ -1,0 +1,30 @@
+<form action="/dhruv-control-panel/projects/save" method="POST" enctype="multipart/form-data" class="admin-form">
+    <input type="hidden" name="current_slug" value="{{ project.slug or '' }}">
+    <div class="admin-grid">
+        <label>Project Title<input name="title" value="{{ project.title or '' }}" required></label>
+        <label>Role<input name="role" value="{{ project.role or '' }}"></label>
+        <label>Date<input name="date" value="{{ project.date or '' }}"></label>
+        <label>Icon / Dummy Text<input name="icon" value="{{ project.icon or 'APP' }}"></label>
+        <label>Icon Class<input name="icon_class" value="{{ project.icon_class or 'project-icon--health' }}"></label>
+        <label>Tech Stack<input name="tech" value="{{ (project.tech or []) | join(', ') }}" placeholder="React, Python, Flask"></label>
+        <label>Skills Learned<input name="skills_learned" value="{{ (project.skills_learned or []) | join(', ') }}" placeholder="APIs, UI design"></label>
+        <label>GitHub URL<input name="github_url" value="{{ project.github_url or '' }}"></label>
+        <label>Live URL<input name="live_url" value="{{ project.live_url or '' }}"></label>
+        <label>GitHub Owner<input name="github_owner" value="{{ project.github_owner or '' }}"></label>
+        <label>GitHub Repo<input name="github_repo" value="{{ project.github_repo or '' }}"></label>
+        <label>Readme Path<input name="readme_path" value="{{ project.readme_path or '' }}"></label>
+        <label>Git Ref<input name="ref" value="{{ project.ref or 'main' }}"></label>
+        <label class="admin-check"><input type="checkbox" name="featured" {% if project.featured %}checked{% endif %}> Show on home page</label>
+        <label>Screenshot Image<input type="file" name="image" accept="image/*"></label>
+        <label>Detail Background Image/Video<input type="file" name="bg_media" accept="image/*,video/mp4,video/webm,video/quicktime"></label>
+    </div>
+    {% if project.image_url %}
+    <p class="admin-current-image">Current image: {{ project.image_url }}</p>
+    {% endif %}
+    {% if project.bg_media_url %}
+    <p class="admin-current-image">Current detail background: {{ project.bg_media_url }}</p>
+    {% endif %}
+    <label>Short Description<textarea name="summary">{{ project.summary or '' }}</textarea></label>
+    <label>Project Detail Description<textarea name="description">{{ project.description or project.summary or '' }}</textarea></label>
+    <button class="btn btn-primary" type="submit">Save Project</button>
+</form>
